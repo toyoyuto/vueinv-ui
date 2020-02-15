@@ -1,15 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import product from './product'
 import app from './app'
+import product from './product'
+import message from './message'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
+    app,
     product,
-    app
+    message
   }
 })
 

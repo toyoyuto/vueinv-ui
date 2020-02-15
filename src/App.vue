@@ -1,13 +1,20 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+  <main>
+    <div id="app">
+      <img src="./assets/logo.png">
+      <Message />
+      <router-view/>
+    </div>
+  </main>
 </template>
 
 <script>
+import Message from './components/Message.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Message
+  }
 }
 </script>
 
