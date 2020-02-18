@@ -1,4 +1,5 @@
-import axios from 'axios'
+
+import { axios } from '../constants/api'
 
 // 初期化のしやすいように加工
 const getDefaultState = () => {
@@ -41,7 +42,6 @@ const actions = {
         console.log('error')
         // エラーメッセージの格納
         context.commit('message/setMessges', error.response.data, { root: true })
-        console.log(error.response.data)
         context.dispatch(param.actions.failure, null, { root: true })
       })
   }

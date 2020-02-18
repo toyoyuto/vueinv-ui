@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div id="app">
+    <div id="main">
       <img src="./assets/logo.png">
       <Message />
       <router-view/>
@@ -14,6 +14,10 @@ export default {
   name: 'App',
   components: {
     Message
+  },
+  beforeMount () {
+    // マスタ情報取得
+    this.$store.dispatch('master/getMasterData')
   }
 }
 </script>
