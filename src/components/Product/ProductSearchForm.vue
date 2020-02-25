@@ -26,16 +26,11 @@
     </div>
     <div>
       <div class="md-layout-item md-size-40">
-        <md-field>
-          <label>商品カテゴリ</label>
-          <md-select v-model="searchForm.product_category_id">
-            <ProductCategySelect
-            v-for="productCategyItem in productCategyList"
-            :key="productCategyItem.id"
-            :productCategyItem="productCategyItem"
-            />
-          </md-select>
-        </md-field>
+        <ProductCategySelect
+        :productCategoryId="searchForm.product_category_id"
+        :productCategyList="productCategyList"
+        @onChangeProductCategy="onChangeProductCategy"
+        />
       </div>
     </div>
     <div>
@@ -99,6 +94,11 @@ export default {
   methods: {
     getProductList () {
       this.$store.dispatch('product/getProductList')
+    },
+    onChangeProductCategy (value) {
+      this.searchForm = {
+        product_category_id: value
+      }
     },
     clearSearchForm () {
       this.searchForm = {
