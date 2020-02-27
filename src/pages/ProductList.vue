@@ -4,28 +4,19 @@
       <ProductSearchForm />
     </div>
     <div class="gird">
-      <div>
-        <md-table v-model="productList" md-card>
-          <md-table-toolbar>
-            <h1 class="md-title">商品一覧</h1>
-          </md-table-toolbar>
-
-          <md-table-row slot="md-table-row" slot-scope="{ item }">
-            <md-table-cell md-label="ID" md-sort-by="id" md-numeric>{{ item.id }}</md-table-cell>
-            <md-table-cell md-label="Name" md-sort-by="name">{{ item.name }}</md-table-cell>
-          </md-table-row>
-        </md-table>
-      </div>
+      <ProductSearchTable />
     </div>
   </div>
 </template>
 
 <script>
 import ProductSearchForm from '../components/Product/ProductSearchForm.vue'
+import ProductSearchTable from '../components/Product/ProductSearchTable.vue'
 export default {
   name: 'ProductList',
   components: {
-    ProductSearchForm
+    ProductSearchForm,
+    ProductSearchTable
   },
   data () {
     return {

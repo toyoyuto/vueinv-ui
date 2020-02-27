@@ -22,15 +22,16 @@ export default {
     }
   },
   template: `<md-field>
-          <label>商品カテゴリ</label>
-          <md-select v-model="product_category_id">
-            <md-option value="" />
-            <ProductCategyOption
-            v-for="productCategyItem in productCategyList"
-            :key="productCategyItem.id"
-            :productCategyItem="productCategyItem"
-            />
-          </md-select>
-        </md-field>`
+    <label>商品カテゴリ</label>
+    <md-select v-model="product_category_id">
+      <md-option value="" />
+      <ProductCategyOption
+      v-for="productCategyItem in productCategyList"
+      :key="productCategyItem.id"
+      :productCategyItem="productCategyItem"
+      />
+    </md-select>
+  </md-field>
+  `
 }
 </script>
