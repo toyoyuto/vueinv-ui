@@ -18,8 +18,12 @@
 export default {
   name: 'ProductSearchTable',
   computed: {
-    productList () {
-      return this.$store.state.product.products
+    productList: {
+      get: function () {
+        return this.$store.state.product.products
+      },
+      set: function (newValue) {
+      }
     }
   }
 }
